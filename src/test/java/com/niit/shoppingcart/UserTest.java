@@ -1,11 +1,11 @@
-package com.niit.shoppingcart.model;
+package com.niit.shoppingcart;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.shoppingcart.dao.UserDAO;
+import com.niit.shoppingcart.model.User;
 
 public class UserTest {
-
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
@@ -16,14 +16,14 @@ public class UserTest {
 		UserDAO userDAO = (UserDAO) context.getBean("userDAO");
 
 		User user = (User) context.getBean("user");
-		
+
 		user.setId("U1");
 		user.setUsername("RAJ");
 		user.setPassword("password");
 		user.setEmailid("emailid");
 		user.setAddress("address");
 		user.setMobilenumber(1234);
-		
+
 		userDAO.saveOrUpdate(user);
 
 		if (userDAO.get("U1") == null) {
@@ -32,4 +32,5 @@ public class UserTest {
 			System.out.println("User exists..");
 		}
 	}
+
 }
