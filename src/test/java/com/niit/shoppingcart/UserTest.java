@@ -16,20 +16,16 @@ public class UserTest {
 		UserDAO userDAO = (UserDAO) context.getBean("userDAO");
 
 		User user = (User) context.getBean("user");
-
-		user.setId("U1");
-		user.setUsername("RAJ");
-		user.setPassword("password");
-		user.setEmailid("emailid");
-		user.setAddress("address");
-		user.setMobilenumber(1234);
+		user.setId("niit");
+		user.setPassword("niit");
+		user.setAdmin(true);
 
 		userDAO.saveOrUpdate(user);
 
-		if (userDAO.get("U1") == null) {
-			System.out.println("User does not exist");
+		if (userDAO.isValidUser("niit", "niit", true)) {
+			System.out.println("welcome admin");
 		} else {
-			System.out.println("User exists..");
+			System.out.println("invalid crdentials");
 		}
 	}
 
