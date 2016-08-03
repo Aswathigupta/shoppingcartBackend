@@ -16,12 +16,16 @@ public class UserDetails {
 	private String id;
 
 	private String name;
+	
+	private String password;
 
 	private String mailID;
 
 	private String address;
 
 	private String contactNumber;
+
+	
 
 	@Column(name = "admin", columnDefinition = "tinyint default 0")
 
@@ -51,6 +55,14 @@ public class UserDetails {
 		this.name = name;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	public String getMailID() {
 		return mailID;
 	}

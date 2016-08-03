@@ -1,6 +1,5 @@
 package com.niit.shoppingcart.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

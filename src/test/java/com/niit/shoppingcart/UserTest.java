@@ -22,7 +22,7 @@ public class UserTest {
 
 		userDAO.saveOrUpdate(user);
 
-		if (userDAO.isValidUser("niit", "niit", true)) {
+		if (userDAO.isValidUser("niit", "niit")) {
 			System.out.println("welcome admin");
 		} else {
 			System.out.println("invalid crdentials");
