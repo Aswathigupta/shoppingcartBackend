@@ -18,7 +18,12 @@ public class UserTest {
 		User user = (User) context.getBean("user");
 		user.setId("niit");
 		user.setPassword("niit");
+		user.setName("Aswathi");
+		user.setEmailID("ash@gmail.com");
+		user.setAddress("Kerala");
+		user.setContactNumber("123");
 		user.setAdmin(true);
+	
 
 		userDAO.saveOrUpdate(user);
 

@@ -14,4 +14,6 @@ public interface SupplierDAO {
 
 	public void delete(String id);
 
+	public Supplier getByName(String name);
+
 }

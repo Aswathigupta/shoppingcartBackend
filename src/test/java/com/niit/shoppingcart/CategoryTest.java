@@ -15,8 +15,9 @@ public class CategoryTest {
 		context.refresh();
 
 		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
-
+		
 		Category category = (Category) context.getBean("category");
+
 		category.setId("CG1");
 		category.setName("Design");
 		category.setDescription("Designing");
