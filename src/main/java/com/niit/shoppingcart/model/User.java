@@ -1,5 +1,6 @@
 package com.niit.shoppingcart.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -13,15 +14,15 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name = "user")
 @Component
-public class User {
+public class User implements Serializable {
 
 	@Id
 	private String id;
 
 	private String Name;
-	
+
 	private String password;
-	
+
 	private String EmailID;
 
 	private String Address;
@@ -29,10 +30,9 @@ public class User {
 	private String ContactNumber;
 
 	private boolean isAdmin;
-	
+
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private Set<Cart> cart;
-	
 
 	public Set<Cart> getCart() {
 		return cart;
